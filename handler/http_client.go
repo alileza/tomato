@@ -1,15 +1,12 @@
 package handler
 
 import (
-	"bytes"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"strings"
 
 	"github.com/DATA-DOG/godog/gherkin"
 	"github.com/alileza/tomato/compare"
-	"github.com/olekukonko/tablewriter"
 )
 
 func (h *Handler) sendRequest(resourceName, target string) error {
@@ -83,13 +80,13 @@ func (h *Handler) checkResponseBody(resourceName string, expectedBody *gherkin.D
 		return err
 	}
 
-	if err := compare.Value(actual, expected); err != nil {
-		b := bytes.NewBufferString("\nJSON mismatch (" + err.Error() + ")\n\n")
-		t := tablewriter.NewWriter(b)
-		compare.Print(t, "", actual, expected)
-		t.Render()
-		return errors.New(b.String())
+	comparison, err := compare.JSON(body, []byte(expectedBody.Content))
+	if err != nil {
+		return err
 	}
 
+	if comparison.ShouldFailStep() {
+		return comparison
+	}
 	return nil
 }
