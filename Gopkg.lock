@@ -88,7 +88,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:993ae7a35bc8d3dc3ec44b0f2930c306c34dd23e3ce984af9fb9243bbbc8c7e3"
+  digest = "1:171c1337a8ad95624633b9a66fe318b4a1de286440c7efccdc21c86c773674ad"
   name = "github.com/olekukonko/tablewriter"
   packages = ["."]
   pruneopts = ""
@@ -103,12 +103,39 @@
   version = "v0.8.0"
 
 [[projects]]
+  digest = "1:3962f553b77bf6c03fc07cd687a22dd3b00fe11aa14d31194f5505f5bb65cdc8"
+  name = "github.com/sergi/go-diff"
+  packages = ["diffmatchpatch"]
+  pruneopts = ""
+  revision = "1744e2970ca51c86172c8190fadad617561ed6e7"
+  version = "v1.0.0"
+
+[[projects]]
   branch = "master"
   digest = "1:4e8f1cae8e6d83af9000d82566efb8823907dae77ba4f1d76ff28fdd197c3c90"
   name = "github.com/streadway/amqp"
   packages = ["."]
   pruneopts = ""
   revision = "e5adc2ada8b8efff032bf61173a233d143e9318e"
+
+[[projects]]
+  digest = "1:529ed3f98838f69e13761788d0cc71b44e130058fab13bae2ce09f7a176bced4"
+  name = "github.com/yudai/gojsondiff"
+  packages = [
+    ".",
+    "formatter",
+  ]
+  pruneopts = ""
+  revision = "7b1b7adf999dab73a6eb02669c3d82dbb27a3dd6"
+  version = "1.0.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:9857bb2293f372b2181004d8b62179bbdb4ab0982ec6f762abe6cf2bfedaff85"
+  name = "github.com/yudai/golcs"
+  packages = ["."]
+  pruneopts = ""
+  revision = "ecda9a501e8220fae3b4b600c3db4b0ba22cfc68"
 
 [[projects]]
   digest = "1:c1771ca6060335f9768dff6558108bc5ef6c58506821ad43377ee23ff059e472"
@@ -149,6 +176,8 @@
     "github.com/olekukonko/tablewriter",
     "github.com/pkg/errors",
     "github.com/streadway/amqp",
+    "github.com/yudai/gojsondiff",
+    "github.com/yudai/gojsondiff/formatter",
     "gopkg.in/alecthomas/kingpin.v2",
     "gopkg.in/yaml.v2",
   ]
